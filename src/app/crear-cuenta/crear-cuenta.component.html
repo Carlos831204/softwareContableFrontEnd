@@ -1,0 +1,57 @@
+<div class="col-md-6 offset-md-3">
+    <h3 class="text-center">Crear cuenta contable</h3>
+    <form (ngSubmit)= "onSubmit()" #cuentaForm = "ngForm">
+        <div class="form-group">
+            <label>Código</label>
+            <input type="text"
+            class="form-control"
+            id="codigo"
+            [(ngModel)]="cuenta.codigoCuenta"
+            name="codigo"
+            required
+            minlength="1"
+            maxlength="8"
+            placeholder="Digite el código de la cuenta"
+            #codigo="ngModel"
+            >
+            <div class="alert alert-danger" *ngIf= "codigo.invalid && (codigo.dirty || codigo.touched)">
+                <div *ngIf = "codigo.errors.required">
+                    Digite el código de la cuenta
+                </div>
+                <div *ngIf = "codigo.errors.minlength">
+                    El código debe tener como mínimo 1 dígito
+                </div>
+                <div *ngIf = "codigo.errors.maxlength">
+                    El código debe tener como mínimo 8 dígito
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Nombre</label>
+            <input type="text"
+            class="form-control"
+            id="nombre"
+            [(ngModel)] = "cuenta.nombreCuenta"
+            name="nombre"
+            required
+            minlength="4"
+            maxlength="50"
+            placeholder="Digite el nombre de la cuenta"
+            #nombre="ngModel"
+            >
+            <div class="alert alert-danger" *ngIf= "nombre.invalid && (nombre.dirty || nombre.touched)">
+                <div *ngIf = "nombre.errors.required">
+                    Digite el nombre de la cuenta
+                </div>
+                <div *ngIf = "nombre.errors.minlength">
+                    El nombre de la cuenta debe tener como mínimo 4 caracteres
+                </div>
+                <div *ngIf = "nombre.errors.maxlength">
+                    El nombre de la cuenta debe tener como máximo 50 caracteres
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-success" [disabled]= "!cuentaForm.form.valid">Guardar</button>
+    </form>
+</div>

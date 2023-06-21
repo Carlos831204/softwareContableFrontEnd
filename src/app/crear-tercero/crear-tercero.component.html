@@ -1,0 +1,157 @@
+<div class="col-md-6 offset-md-3">
+    <h3 class="text-center">Crear tercero</h3>
+    <form (ngSubmit)= "onSubmit()" #terceroForm = "ngForm">
+        <div class="form-group">
+            <label>Nombre</label>
+            <input type="text"
+            class="form-control"
+            id="nombre"
+            [(ngModel)]="tercero.nombre"
+            name="nombre"
+            required
+            minlength="3"
+            maxlength="20"
+            placeholder="Digite el nombre del tercero"
+            #nombre="ngModel"
+            >
+            <div class="alert alert-danger" *ngIf= "nombre.invalid && (nombre.dirty || nombre.touched)">
+                <div *ngIf = "nombre.errors.required">
+                    Digite el nombre del tercero
+                </div>
+                <div *ngIf = "nombre.errors.minlength">
+                    El nombre debe tener como mínimo 3 caracteres
+                </div>
+                <div *ngIf = "nombre.errors.maxlength">
+                    El nombre debe tener como mínimo 20 caracteres
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Tipo Documento</label>
+            <input type="text"
+            class="form-control"
+            id="tipoDocumento"
+            [(ngModel)] = "tercero.tipoDocumento"
+            name="tipoDocmento"
+            required
+            minlength="1"
+            maxlength="3"
+            placeholder="Digite el tipo de documento"
+            #tipoDocumento="ngModel"
+            >
+            <div class="alert alert-danger" *ngIf= "tipoDocumento.invalid && (tipoDocumento.dirty || tipoDocumento.touched)">
+                <div *ngIf = "tipoDocumento.errors.required">
+                    Digite el tipo de documento del tercero
+                </div>
+                <div *ngIf = "tipoDocumento.errors.minlength">
+                    El tipo de documento debe tener como mínimo 1 carácter
+                </div>
+                <div *ngIf = "tipoDocumento.errors.maxlength">
+                    El tipo de documento debe tener como máximo 3 caracteres
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Documento</label>
+            <input type="text"
+            class="form-control"
+            id="documento"
+            [(ngModel)] = "tercero.documento"
+            name="documento"
+            required
+            minlength="8"
+            maxlength="10"
+            placeholder="Digite documento"
+            #documento="ngModel"
+            >
+            <div class="alert alert-danger" *ngIf= "documento.invalid && (documento.dirty || documento.touched)">
+                <div *ngIf = "documento.errors.required">
+                    Digite el documento del tercero
+                </div>
+                <div *ngIf = "documento.errors.minlength">
+                    El documento debe tener como mínimo 8 dígitos
+                </div>
+                <div *ngIf = "documento.errors.maxlength">
+                    El documento debe tener como máximo 10 dígitos
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Dirección</label>
+            <input type="text"
+            class="form-control"
+            id="direccion"
+            [(ngModel)] = "tercero.direccion"
+            name="direccion"
+            required
+            minlength="10"
+            maxlength="50"
+            placeholder="Digite la dirección"
+            #direccion="ngModel"
+            >
+            <div class="alert alert-danger" *ngIf= "direccion.invalid && (direccion.dirty || direccion.touched)">
+                <div *ngIf = "direccion.errors.required">
+                    Digite la dirección del tercero
+                </div>
+                <div *ngIf = "direccion.errors.minlength">
+                    La dirección debe tener como mínimo 10 caracteres
+                </div>
+                <div *ngIf = "direccion.errors.maxlength">
+                    La dirección debe tener como máximo 50 caracteres
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Teléfono</label>
+            <input type="text"
+            class="form-control"
+            id="telefono"
+            [(ngModel)] = "tercero.telefono"
+            name="telefono"
+            required
+            minlength="7"
+            maxlength="10"
+            placeholder="Digite el teléfono"
+            #telefono="ngModel"
+            >
+            <div class="alert alert-danger" *ngIf= "telefono.invalid && (telefono.dirty || telefono.touched)">
+                <div *ngIf = "telefono.errors.required">
+                    Digite el teléfono del tercero
+                </div>
+                <div *ngIf = "telefono.errors.minlength">
+                    El teléfono debe tener como mínimo 7 dígitos
+                </div>
+                <div *ngIf = "telefono.errors.maxlength">
+                    El teléfono debe tener como máximo 10 dígitos
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Correo </label>
+            <input type="email"
+            class="form-control"
+            id="correo"
+            [(ngModel)] = "tercero.correo"
+            name="correo"
+            pattern ="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"
+            required
+            placeholder="Digite el correo electrónico"
+            #correo="ngModel"
+            >
+            <div class="alert alert-danger" *ngIf= "correo.invalid && (correo.dirty || correo.touched)">
+                <div *ngIf = "correo.errors.required">
+                    Digite el correo eletrónico
+                </div>
+                <div *ngIf = "correo.errors.pattern">
+                    Dígite el correo eletrónico con el siguiente formato: correo123@gmail.com
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-success" [disabled]= "!terceroForm.form.valid">Guardar</button>
+    </form>
+</div>

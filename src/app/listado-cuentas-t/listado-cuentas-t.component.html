@@ -1,0 +1,26 @@
+<h2>Listado cuentasT</h2>
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Tercero</th>
+            <th>Débito</th>
+            <th>Crédito</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor= "let cuentaT of cuentaT">
+            <td>{{cuentaT.codigoCuentaT}}</td>
+            <td>{{cuentaT.nombreCuentaT}}</td>
+            <td>{{cuentaT.tercero}}</td>
+            <td>{{cuentaT.debito}}</td>
+            <td>{{cuentaT.credito}}</td>
+            <td>
+                <button (click)="eliminarCuentaT(cuentaT.idCuentaT)" class="btn btn-danger" style="margin-left: 10px;">Eliminar</button>
+                <button (click)="actualizarCuentaT(cuentaT.idCuentaT)" class="btn btn-info" style="margin-left: 10px;">Actualizar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

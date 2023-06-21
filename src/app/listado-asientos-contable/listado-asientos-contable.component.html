@@ -1,0 +1,29 @@
+<h2>Listado Asientos Contables</h2>
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Fecha</th>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Tercero</th>
+            <th>Débito</th>
+            <th>Crédito</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor= "let asiento of asientoContable">
+            <td>{{asiento.fecha}}</td>
+            <td>{{asiento.codigoCuenta}}</td>
+            <td>{{asiento.nombreCuenta}}</td>
+            <td>{{asiento.tercero}}</td>
+            <td>{{asiento.debito}}</td>
+            <td>{{asiento.credito}}</td>
+            <td>
+                <button (click)="eliminarAsientoContable(asiento.idAsiento)" class="btn btn-danger" style="margin-left: 10px;">Eliminar</button>
+                <button (click)="actualizarAsientoContable(asiento.idAsiento)" class="btn btn-info" style="margin-left: 10px;">Actualizar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+

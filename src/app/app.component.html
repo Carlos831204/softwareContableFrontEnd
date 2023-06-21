@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a routerLink="catalogoCuentas" routerLinkActive="active" class="nav-link">Cátalogo cuentas</a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="crearCuenta" routerLinkActive="active" class="nav-link">Crear cuenta</a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="listadoTerceros" routerLinkActive="active" class="nav-link">Listado terceros</a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="crearTercero" routerLinkActive="active" class="nav-link">Crear tercero</a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="listadoCuentasT" routerLinkActive="active" class="nav-link">Listado CuentasT</a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="crearCuentaT" routerLinkActive="active" class="nav-link">Crear CuentaT</a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="listadoAsientosContables" routerLinkActive="active" class="nav-link">Asientos Contables</a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="crearAsientoContable" routerLinkActive="active" class="nav-link">Crear Asiento Contable</a>
+        </li>
+    </ul>
+</nav>
+<h1 class="text-center">{{title}}</h1>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
+

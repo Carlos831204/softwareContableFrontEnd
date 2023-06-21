@@ -1,0 +1,136 @@
+<div class="col-md-6 offset-md-3">
+    <h3 class="text-center">Crear CuentaT</h3>
+    <form (ngSubmit)= "onSubmit()" #cuentaTForm = "ngForm">
+        <div class="form-group">
+            <label>Código</label>
+            <input type="text"
+            class="form-control"
+            id="codigo"
+            [(ngModel)]="cuentaT.codigoCuentaT"
+            name="codigo"
+            required
+            minlength="1"
+            maxlength="8"
+            placeholder="Digite el código de la cuenta"
+            #codigo="ngModel"
+            >
+            <div class="alert alert-danger" *ngIf= "codigo.invalid && (codigo.dirty || codigo.touched)">
+                <div *ngIf = "codigo.errors.required">
+                    Digite el código de la cuenta
+                </div>
+                <div *ngIf = "codigo.errors.minlength">
+                    El código debe tener como mínimo 1 dígito
+                </div>
+                <div *ngIf = "codigo.errors.maxlength">
+                    El código debe tener como mínimo 8 dígito
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Nombre</label>
+            <input type="text"
+            class="form-control"
+            id="nombre"
+            [(ngModel)] = "cuentaT.nombreCuentaT"
+            name="nombre"
+            required
+            minlength="4"
+            maxlength="50"
+            placeholder="Digite el nombre de la cuenta"
+            #nombre="ngModel"
+            >
+            <div class="alert alert-danger" *ngIf= "nombre.invalid && (nombre.dirty || nombre.touched)">
+                <div *ngIf = "nombre.errors.required">
+                    Digite el nombre de la cuenta
+                </div>
+                <div *ngIf = "nombre.errors.minlength">
+                    El nombre de la cuenta debe tener como mínimo 4 caracteres
+                </div>
+                <div *ngIf = "nombre.errors.maxlength">
+                    El nombre de la cuenta debe tener como máximo 50 caracteres
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Tercero</label>
+            <input type="text"
+            class="form-control"
+            id="tercero"
+            [(ngModel)] = "cuentaT.tercero"
+            name="tercero"
+            required
+            minlength="4"
+            maxlength="50"
+            placeholder="Digite el nombre del tercero"
+            #tercero="ngModel"
+            >
+            <div class="alert alert-danger" *ngIf= "tercero.invalid && (tercero.dirty || tercero.touched)">
+                <div *ngIf = "tercero.errors.required">
+                    Digite el nombre del tercero
+                </div>
+                <div *ngIf = "tercero.errors.minlength">
+                    El nombre del tercero debe tener como mínimo 4 caracteres
+                </div>
+                <div *ngIf = "tercero.errors.maxlength">
+                    El nombre del tercero debe tener como máximo 50 caracteres
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Débito</label>
+            <input type="number"
+            class="form-control"
+            id="debito"
+            [(ngModel)] = "cuentaT.debito"
+            name="debito"
+            required
+            minlength="1"
+            maxlength="10"
+            placeholder="Digite el valor débito de la cuenta"
+            #debito="ngModel"
+            >
+            <div class="alert alert-danger" *ngIf= "debito.invalid && (debito.dirty || debito.touched)">
+                <div *ngIf = "debito.errors.required">
+                    Digite el valor débito de la cuenta
+                </div>
+                <div *ngIf = "debito.errors.minlength">
+                    El valor débito debe tener como mínimo 1 dígito
+                </div>
+                <div *ngIf = "debito.errors.maxlength">
+                    El valor débito debe tener como máximo 10 dígitos
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Crédito</label>
+            <input type="number"
+            class="form-control"
+            id="credito"
+            [(ngModel)] = "cuentaT.credito"
+            name="credito"
+            required
+            minlength="1"
+            maxlength="10"
+            placeholder="Digite el valor crédito de la cuenta"
+            #credito="ngModel"
+            >
+            <div class="alert alert-danger" *ngIf= "credito.invalid && (credito.dirty || credito.touched)">
+                <div *ngIf = "credito.errors.required">
+                    Digite el valor crédito de la cuenta
+                </div>
+                <div *ngIf = "credito.errors.minlength">
+                    El valor crédito debe tener como mínimo 1 dígito
+                </div>
+                <div *ngIf = "nombre.errors.maxlength">
+                    El valor crédito debe tener como máximo 10 dígitos
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-success" [disabled]= "!cuentaTForm.form.valid">Guardar</button>
+    </form>
+</div>
+
