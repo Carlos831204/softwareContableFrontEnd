@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CatalogoCuenta } from '../catalogo-cuenta';
-import { CatalogoCuentaService } from '../catalogo-cuenta.service';
+import { CatalogoCuentaService } from '../services/catalogo-cuenta.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import swal from 'sweetalert2';
 

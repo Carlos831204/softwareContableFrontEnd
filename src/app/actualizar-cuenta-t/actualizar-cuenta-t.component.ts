@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import swal from 'sweetalert2';
 import { CuentaT } from '../cuenta-t';
-import { CuentaTService } from '../cuenta-t.service';
+import { CuentaTService } from '../services/cuenta-t.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({

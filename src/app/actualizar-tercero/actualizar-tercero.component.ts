@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Tercero } from '../tercero';
-import { TerceroService } from '../tercero.service';
+import { TerceroService } from '../services/tercero.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import swal from 'sweetalert2';
 
