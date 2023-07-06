@@ -7,12 +7,12 @@ import { ListadoCatalogoCuentasComponent } from './pages/admin/listado-catalogo-
 import { HttpClientModule } from '@angular/common/http';
 import { CrearCuentaComponent } from './pages/admin/crear-cuenta/crear-cuenta.component';
 import { FormsModule } from '@angular/forms';
-import { ActualizarCuentaComponent } from './actualizar-cuenta/actualizar-cuenta.component';
+import { ActualizarCuentaComponent } from './pages/admin/actualizar-cuenta/actualizar-cuenta.component';
 import { ListadoTercerosComponent } from './pages/admin/listado-terceros/listado-terceros.component';
 import { CrearTerceroComponent } from './pages/admin/crear-tercero/crear-tercero.component';
-import { ActualizarTerceroComponent } from './actualizar-tercero/actualizar-tercero.component';
+import { ActualizarTerceroComponent } from './pages/admin/actualizar-tercero/actualizar-tercero.component';
 import { CrearCuentaTComponent } from './pages/admin/crear-cuenta-t/crear-cuenta-t.component';
-import { ActualizarCuentaTComponent } from './actualizar-cuenta-t/actualizar-cuenta-t.component';
+import { ActualizarCuentaTComponent } from './pages/admin/actualizar-cuenta-t/actualizar-cuenta-t.component';
 import { ListadoCuentasTComponent } from './pages/admin/listado-cuentas-t/listado-cuentas-t.component';
 import { ListadoAsientosContableComponent } from './listado-asientos-contable/listado-asientos-contable.component';
 import { ActualizarAsientoContableComponent } from './actualizar-asiento-contable/actualizar-asiento-contable.component';
@@ -20,6 +20,7 @@ import { CrearAsientoContableComponent } from './crear-asiento-contable/crear-as
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -36,6 +37,7 @@ import { MatListModule } from '@angular/material/list';
 import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { BienvenidoComponent } from './pages/admin/bienvenido/bienvenido.component';
+import { SidebarComponent as UserSidebar } from './pages/user/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +62,8 @@ import { BienvenidoComponent } from './pages/admin/bienvenido/bienvenido.compone
     UserDashboardComponent,
     SidebarComponent,
     ProfileComponent,
-    BienvenidoComponent
+    BienvenidoComponent,
+    UserSidebar
   ],
   imports: [
     BrowserModule,
@@ -75,7 +78,8 @@ import { BienvenidoComponent } from './pages/admin/bienvenido/bienvenido.compone
     MatCardModule,
     MatToolbarModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

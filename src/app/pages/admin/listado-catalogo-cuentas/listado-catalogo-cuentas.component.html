@@ -18,8 +18,8 @@
                                     <td>{{cuenta.codigoCuenta}}</td>
                                     <td>{{cuenta.nombreCuenta}}</td>
                                     <td>
-                                        <button (click)="eliminarCuenta(cuenta.idCuenta)" class="btn btn-danger" style="margin-left: 10px;">Eliminar</button>
-                                        <button (click)="actualizarCuenta(cuenta.idCuenta)" class="btn btn-info" style="margin-left: 10px;">Actualizar</button>
+                                        <button (click)="eliminarCuenta(cuenta.idCuenta)" mat-raised-button color="accent" style="margin-left: 10px;">Eliminar</button>
+                                        <button [routerLink]="'/admin/actualizarCuenta/'+cuenta.idCuenta" mat-raised-button color="primary" style="margin-left: 10px;">Actualizar</button>
                                     </td>
                                 </tr>
                             </tbody>

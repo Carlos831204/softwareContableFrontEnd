@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ListadoCatalogoCuentasComponent } from './pages/admin/listado-catalogo-cuentas/listado-catalogo-cuentas.component';
 import { CrearCuentaComponent } from './pages/admin/crear-cuenta/crear-cuenta.component';
-import { ActualizarCuentaComponent } from './actualizar-cuenta/actualizar-cuenta.component';
+import { ActualizarCuentaComponent } from './pages/admin/actualizar-cuenta/actualizar-cuenta.component';
 import { ListadoTercerosComponent } from './pages/admin/listado-terceros/listado-terceros.component';
 import { CrearTerceroComponent } from './pages/admin/crear-tercero/crear-tercero.component';
-import { ActualizarTerceroComponent } from './actualizar-tercero/actualizar-tercero.component';
+import { ActualizarTerceroComponent } from './pages/admin/actualizar-tercero/actualizar-tercero.component';
 import { ListadoCuentasTComponent } from './pages/admin/listado-cuentas-t/listado-cuentas-t.component';
 import { CrearCuentaTComponent } from './pages/admin/crear-cuenta-t/crear-cuenta-t.component';
-import { ActualizarCuentaTComponent } from './actualizar-cuenta-t/actualizar-cuenta-t.component';
+import { ActualizarCuentaTComponent } from './pages/admin/actualizar-cuenta-t/actualizar-cuenta-t.component';
 import { ListadoAsientosContableComponent } from './listado-asientos-contable/listado-asientos-contable.component';
 import { CrearAsientoContableComponent } from './crear-asiento-contable/crear-asiento-contable.component';
 import { ActualizarAsientoContableComponent } from './actualizar-asiento-contable/actualizar-asiento-contable.component';
@@ -57,16 +57,32 @@ const routes: Routes = [
       {
         path: 'crearCuentaT', 
         component:CrearCuentaTComponent
+      },
+      {
+        path: 'actualizarCuenta/:id', 
+        component:ActualizarCuentaComponent
+      },
+      {
+        path: 'actualizarTercero/:id', 
+        component:ActualizarTerceroComponent
+      },
+      {
+        path: 'actualizarCuentaT/:id', 
+        component:ActualizarCuentaTComponent
       }
+
     ]
   },
-  {path: 'user-dashboard', component:UserDashboardComponent, pathMatch:'full'},
+  {
+    path: 'user-dashboard', 
+    component:UserDashboardComponent,
+    children:[
+      
+    ]
+  },
   {path: '', component:HomeComponent, pathMatch:'full'},
   {path: 'signup', component:SignupComponent, pathMatch:'full'},
   {path: 'login', component:LoginComponent, pathMatch:'full'},
-  {path: 'actualizarCuenta/:id', component:ActualizarCuentaComponent},
-  {path: 'actualizarTercero/:id', component:ActualizarTerceroComponent},
-  {path: 'actualizarCuentaT/:id', component:ActualizarCuentaTComponent},
   {path: 'listadoAsientosContables', component:ListadoAsientosContableComponent},
   {path: 'crearAsientoContable', component:CrearAsientoContableComponent},
   {path: 'actualizarAsientoContable/:id', component:ActualizarAsientoContableComponent},

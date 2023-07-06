@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CatalogoCuenta } from '../catalogo-cuenta';
-import { CatalogoCuentaService } from '../services/catalogo-cuenta.service';
+import { CatalogoCuenta } from '../../../catalogo-cuenta';
+import { CatalogoCuentaService } from '../../../services/catalogo-cuenta.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import swal from 'sweetalert2';
 
@@ -24,7 +24,7 @@ export class ActualizarCuentaComponent implements OnInit{
   }
 
   irCatalogoCuenta(){
-    this.router.navigate(['/catalogoCuentas']);
+    this.router.navigate(['admin/catalogoCuentas']);
     swal('Cuenta actualizada', `La cuenta contable ${this.cuenta.nombreCuenta} ha sido actualizada con éxito`, 'success');
   }
 

@@ -1,8 +1,8 @@
 export class CuentaT {
     idCuentaT:number;
-    codigoCuentaT:string;
-    nombreCuentaT:string;
-    tercero:string;
+    codigoCuentaT:String;
+    nombreCuentaT:String;
+    tercero:any;
     debito:number;
     credito:number;
 }
